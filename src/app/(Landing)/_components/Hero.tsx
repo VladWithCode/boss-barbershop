@@ -22,7 +22,7 @@ function Hero() {
 				El mejor cuidado para tu cabello y barba en la ciudad.
 			</motion.h1>
 			<motion.button
-				className="col-span-full row-start-2 z-10 bg-accent m-auto mr-5 p-4 text-xl rounded-sm"
+				className="col-span-full row-start-2 z-10 btn-grad-red m-auto mr-5 p-4 text-xl rounded-sm"
 				initial={{ x: '100%', opacity: 0 }}
 				animate={{ x: 0, opacity: 1 }}
 				transition={{ duration: 0.4, delay: 0 }}>

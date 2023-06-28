@@ -11,3 +11,40 @@ body {
 	@apply bg-main-dark;
 	@apply text-zinc-50;
 }
+
+.btn-grad-slate {
+	background-image: linear-gradient(
+		to right,
+		#2b5876 0%,
+		#4e4376 51%,
+		#2b5876 100%
+	);
+	text-align: center;
+	transition: background 0.5s;
+	background-size: 200% auto;
+	display: block;
+
+	&:hover {
+		background-position: right center; /* change the direction of the change here */
+
+		text-decoration: none;
+	}
+}
+
+.btn-grad-red {
+	background-image: linear-gradient(
+		to right,
+		#e52d27 0%,
+		#b31217 51%,
+		#e52d27 100%
+	);
+	transition: background 0.5s;
+	background-size: 200% auto;
+	display: block;
+
+	&:hover {
+		background-position: right center; /* change the direction of the change here */
+
+		text-decoration: none;
+	}
+}
