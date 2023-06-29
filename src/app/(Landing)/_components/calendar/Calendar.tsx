@@ -14,7 +14,7 @@ export default function Calendar({}) {
 	const today = new Date();
 	const squares = useSquares({
 		today: today,
-		month: today.getMonth(),
+		month: new Date(2023, 5, 1).getMonth(),
 	});
 
 	return (

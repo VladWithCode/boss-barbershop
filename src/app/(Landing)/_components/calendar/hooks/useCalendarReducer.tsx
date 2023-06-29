@@ -14,5 +14,10 @@ export default function useCalendarReducer({
 }: {
 	currentDate: Date;
 }) {
-	const [state, dispatch] = useReducer();
+	const [state, dispatch] = useReducer(
+		() => {
+			return { age: 42 };
+		},
+		{ age: 42 }
+	);
 }
