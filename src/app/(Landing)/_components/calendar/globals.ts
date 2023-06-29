@@ -1,13 +1,13 @@
 export const SQUARE_COUNT = 42;
 
 export const weekdays = {
-	1: 'Dom',
-	2: 'Lun',
-	3: 'Mar',
-	4: 'Mie',
-	5: 'Jue',
-	6: 'Vie',
-	7: 'Sab',
+	0: 'Dom',
+	1: 'Lun',
+	2: 'Mar',
+	3: 'Mie',
+	4: 'Jue',
+	5: 'Vie',
+	6: 'Sab',
 };
 
 export const months: {

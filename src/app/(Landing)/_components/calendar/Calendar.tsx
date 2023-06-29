@@ -6,19 +6,19 @@ import useSquares from './hooks/useSquares';
 
 const DateClassnames = {
 	prev: 'text-zinc-400 font-light',
-	next: 'text-zinc-500 font-normal',
+	next: 'text-zinc-400 font-light',
 	current: 'text-main-dark font-medium',
 };
 
 export default function Calendar({}) {
 	const today = new Date();
 	const squares = useSquares({
+		today: today,
 		month: today.getMonth(),
-		year: today.getFullYear(),
 	});
 
 	return (
-		<div className="relative w-full">
+		<div className="relative w-full p-5">
 			{/* Controls */}
 			<MonthControls />
 			{/* Date Picker */}
@@ -32,16 +32,23 @@ export default function Calendar({}) {
 				<CalendarSq className="font-semibold">Vie</CalendarSq>
 				<CalendarSq className="font-semibold">Sab</CalendarSq>
 				{/* Dates */}
-				{squares.map((square, i) => (
-					<CalendarSq
-						className={DateClassnames[square.parentMonth]}
-						key={i}>
-						{square.dateValue}
-					</CalendarSq>
-				))}
+				<DateSquares squares={squares} />
 			</div>
 		</div>
 	);
+}
+
+function DateSquares({ squares }: { squares: ReturnType<typeof useSquares> }) {
+	return squares.map((square, i) => (
+		<CalendarSq
+			className={getClassname(
+				DateClassnames[square.parentMonth],
+				square.isBeforeToday && 'bg-'
+			)}
+			key={i}>
+			{square.dateValue}
+		</CalendarSq>
+	));
 }
 
 function CalendarSq({
