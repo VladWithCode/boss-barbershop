@@ -10,6 +10,9 @@ export const metadata = {
 	title: 'The Boss Barberia',
 	description:
 		'El mejor cuidado para la belleza del caballero. Agenda tu cita y recibe la mejor calidad en cortes de cabello y cuidado de barba',
+	icons: {
+		icon: '/favicon.ico',
+	},
 };
 
 export default function RootLayout({

@@ -46,20 +46,24 @@ function fillSquares({
 	const squares: {
 		dateValue: number;
 		parentMonth: 'prev' | 'current' | 'next';
-		isBeforeToday: boolean;
+		isToday: boolean;
+		order: 'before' | 'after';
 	}[] = new Array(SQUARE_COUNT);
+	const todayDate = today.getDate();
 	const isLeapYear = currentYear % 4 === 0;
 	const monthDays: number =
-		month !== 1 || isLeapYear // Check if prevMonth is either not feb or currentYear is not a leap-year
+		month !== 1 || !isLeapYear // Check if prevMonth is either not feb or currentYear is not a leap-year
 			? months[month].length // use month length as is
 			: months[month].length + 1; // Add one when is feb and a leap-year
 
 	const prevMonth = month - 1;
 	const prevMonthDaysCount = firstDayWeekday; // The amount of previous month's days in the first week is also the index of the first's weekday
 	const prevLastDate: number =
-		prevMonth !== 1 || isLeapYear // Check if prevMonth is either not feb or currentYear is not a leap-year
+		prevMonth !== 1 || !isLeapYear // Check if prevMonth is either not feb or currentYear is not a leap-year
 			? months[prevMonth].length // use month length as is
 			: months[prevMonth].length + 1; // Add one when is feb and a leap-year
+
+	const todayIndex = todayDate + firstDayWeekday - 1; // I'm not sure what i'm doing here (Check later)
 
 	let lastDate = prevLastDate;
 	let lap = 0;
@@ -77,8 +81,8 @@ function fillSquares({
 		squares[i] = {
 			dateValue,
 			parentMonth,
-			isBeforeToday:
-				parentMonth === 'current' && today.getDate() > dateValue,
+			isToday: todayIndex === i,
+			order: todayIndex > i ? 'before' : 'after',
 		};
 	}
 

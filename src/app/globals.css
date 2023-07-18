@@ -22,7 +22,6 @@ body {
 	text-align: center;
 	transition: background 0.5s;
 	background-size: 200% auto;
-	display: block;
 
 	&:hover {
 		background-position: right center; /* change the direction of the change here */
@@ -40,7 +39,6 @@ body {
 	);
 	transition: background 0.5s;
 	background-size: 200% auto;
-	display: block;
 
 	&:hover {
 		background-position: right center; /* change the direction of the change here */
