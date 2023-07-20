@@ -1,18 +1,40 @@
 body,
 body * {
-	&::-webkit-scrollbar {
-		width: 0.3rem;
-		height: auto;
-		@apply bg-main-mid;
-		@apply rounded-sm;
+  &::-webkit-scrollbar {
+    width: 0.3rem;
+    height: auto;
+    @apply bg-main-mid;
+    @apply rounded-sm;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-amber-200;
+    @apply rounded-sm;
+
+    &:hover {
+      @apply bg-amber-200;
+    }
+  }
+}
+
+.fc {
+	.fc-toolbar-title {
+    @apply uppercase;
+    @apply text-2xl;
+    @apply font-semibold;
+  }
+
+  .fc-col-header-cell-cushion {
+    @apply uppercase;
+  }
+
+	.fc-day-past {
+		@apply bg-zinc-400;
+		@apply text-zinc-800;
 	}
 
-	&::-webkit-scrollbar-thumb {
-		@apply bg-amber-200;
-		@apply rounded-sm;
-
-		&:hover {
-			@apply bg-amber-200;
-		}
+	.fc-daygrid-day.fc-day-today {
+		@apply bg-zinc-900;
+		@apply text-zinc-100
 	}
 }
