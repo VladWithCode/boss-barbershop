@@ -20,7 +20,7 @@ body * {
 .fc {
 	.fc-toolbar-title {
     @apply uppercase;
-    @apply text-2xl;
+    @apply text-xl;
     @apply font-semibold;
   }
 
@@ -37,4 +37,17 @@ body * {
 		@apply bg-zinc-900;
 		@apply text-zinc-100
 	}
+
+  .fc-day {
+    @apply rounded-md;
+
+    &:hover {
+      filter: brightness(95%);
+      transform: scale(.94)
+    }
+  }
+  
+  .fc-daygrid-day-events {
+    @apply hidden;
+  }
 }
