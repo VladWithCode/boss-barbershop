@@ -18,7 +18,7 @@ body * {
 }
 
 .fc {
-	.fc-toolbar-title {
+  .fc-toolbar-title {
     @apply uppercase;
     @apply text-xl;
     @apply font-semibold;
@@ -28,26 +28,30 @@ body * {
     @apply uppercase;
   }
 
-	.fc-day-past {
-		@apply bg-zinc-400;
-		@apply text-zinc-800;
-	}
+  .fc-day-past {
+    @apply bg-zinc-400;
+    @apply text-zinc-800;
+  }
 
-	.fc-daygrid-day.fc-day-today {
-		@apply bg-zinc-900;
-		@apply text-zinc-100
-	}
+  .fc-daygrid-day.fc-day-today {
+    @apply bg-zinc-900;
+    @apply text-zinc-100;
+  }
 
   .fc-day {
     @apply rounded-md;
 
     &:hover {
       filter: brightness(95%);
-      transform: scale(.94)
+      transform: scale(0.94);
     }
   }
-  
+
   .fc-daygrid-day-events {
     @apply hidden;
+  }
+
+  .fc-button-primary {
+    @apply bg-main-dark;
   }
 }
