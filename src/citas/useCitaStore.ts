@@ -11,7 +11,7 @@ type TCitaState = TCitaFields & {
 };
 
 const INITIAL_CITA_STATE = {
-  name: '',
+  nombre: '',
   telefono: '',
   hora: '',
   fecha: '',
